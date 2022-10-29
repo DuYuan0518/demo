@@ -1,0 +1,23 @@
+
+server:
+  port: 8089
+
+spring:
+  # 用于解决springboot最新版本更换了springmvc的pathmatch
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    generate-ddl: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        globally_quoted_identifiers: true
+    show-sql: true
